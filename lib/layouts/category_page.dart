@@ -52,7 +52,7 @@ class CategoryPage extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200.0,
-                childAspectRatio: 2 / 2.9,
+                childAspectRatio: 2 / 3.2,
                 mainAxisSpacing: 10.0,
               ),
               itemBuilder: (context, index) {
