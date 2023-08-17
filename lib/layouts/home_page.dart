@@ -5,8 +5,15 @@ import 'package:flutter_resep_makanan/utilities/data_app.dart';
 import '../widgets/category_item.dart';
 import '../widgets/recipe_item.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   static const routePath = '/home';
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  bool showAllTopRecipes = false;
 
   @override
   Widget build(BuildContext context) {
@@ -116,22 +123,51 @@ class HomePage extends StatelessWidget {
                   height: 260.0,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
-                    ///////////////////////////////////////// FOR TESTING/////////////////////////////////////////////////////////////////////
-                    children: DUMMY_RECIPES.map((recipeData) {
-                      if (recipeData.id == 'm1' ||
-                          recipeData.id == 'm2' ||
-                          recipeData.id == 'm3') {
-                        return RecipeItem(
-                          id: recipeData.id,
-                          category: recipeData.recipeCategoryTitle,
-                          title: recipeData.title,
-                          duration: recipeData.duration,
-                          imagePath: recipeData.imagePath,
-                        );
-                      } else {
-                        return Container();
-                      }
-                    }).toList(),
+                    children: [
+                      // Display Top Recipes
+                      ...DUMMY_RECIPES.take(5).map((recipeData) {
+                        if (showAllTopRecipes ||
+                            (recipeData.id == 'm1' ||
+                                recipeData.id == 'm2' ||
+                                recipeData.id == 'm3')) {
+                          return RecipeItem(
+                            id: recipeData.id,
+                            category: recipeData.recipeCategoryTitle,
+                            title: recipeData.title,
+                            duration: recipeData.duration,
+                            imagePath: recipeData.imagePath,
+                          );
+                        } else {
+                          return Container();
+                        }
+                      }).toList(),
+                      // Show More Button
+                      if (!showAllTopRecipes)
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              showAllTopRecipes = true;
+                            });
+                          },
+                          child: Container(
+                            width: 260.0,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.black,
+                                width: 2.0,
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.add, size: 40.0),
+                                Text('Show More',
+                                    style: TextStyle(fontSize: 16.0)),
+                              ],
+                            ),
+                          ),
+                        ),
+                    ],
                   ),
                 ),
               ],
