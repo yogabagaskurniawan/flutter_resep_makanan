@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-// import '../utilities/constants.dart';
 import '../utilities/data_app.dart';
 import '../widgets/custom_back_button.dart';
 import '../widgets/recipe_details.dart';
-// import '../widgets/icon_text.dart';
 
-class RecipeDetailsScreen extends StatelessWidget {
+class RecipeDetailsPage extends StatelessWidget {
   static const routePath = '/recipe-details';
 
   @override

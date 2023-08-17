@@ -4,7 +4,7 @@ import '../utilities/data_app.dart';
 import '../widgets/recipe_item.dart';
 import '../widgets/custom_back_button.dart';
 
-class CategoryRecipesPage extends StatelessWidget {
+class CategoryPage extends StatelessWidget {
   static const routePath = '/category-recipes';
 
   @override

@@ -29,7 +29,7 @@ class RecipeItem extends StatelessWidget {
           onTap: () {
             Navigator.pushNamed(
               context,
-              RecipeDetailsScreen.routePath,
+              RecipeDetailsPage.routePath,
               arguments: id,
             );
           },

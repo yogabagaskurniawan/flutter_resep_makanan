@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'layouts/home_page.dart';
+import 'layouts/category_page.dart';
+import 'layouts/detail_resep_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,8 +17,8 @@ class MyApp extends StatelessWidget {
       initialRoute: HomePage.routePath,
       routes: {
         HomePage.routePath: (context) => HomePage(),
-        // CategoryRecipesScreen.routePath: (context) => CategoryRecipesScreen(),
-        // RecipeDetailsScreen.routePath: (context) => RecipeDetailsScreen(),
+        CategoryPage.routePath: (context) => CategoryPage(),
+        RecipeDetailsPage.routePath: (context) => RecipeDetailsPage(),
       },
     );
   }

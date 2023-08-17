@@ -35,7 +35,7 @@ class CategoryItem extends StatelessWidget {
                   Navigator.pushNamed(
                     context,
                     // mengambail layouts import '../layouts/category_page.dart';
-                    CategoryRecipesPage.routePath,
+                    CategoryPage.routePath,
                     arguments: {
                       'id': id,
                       'title': title,
