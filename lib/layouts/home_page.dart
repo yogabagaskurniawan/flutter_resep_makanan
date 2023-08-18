@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_resep_makanan/utilities/data_app.dart';
 
-// import '../utilities/constants.dart';
 import '../widgets/category_item.dart';
 import '../widgets/recipe_item.dart';
 
